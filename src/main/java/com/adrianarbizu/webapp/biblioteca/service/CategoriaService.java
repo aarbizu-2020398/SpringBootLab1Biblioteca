@@ -16,23 +16,22 @@ public class CategoriaService implements ICategoriaService{
 
     @Override
     public List<Categoria> listarCategorias() {
-       return categoriaRepository.findAll();
+    return categoriaRepository.findAll();
     }
 
     @Override
     public void guardarCategoria(Categoria categoria) {
-       categoriaRepository.save(categoria);
+    categoriaRepository.save(categoria);
     }
 
     @Override
     public Categoria busCategoriaPorId(Long id) {
-        return categoriaRepository.findById(id).orElse
+        return categoriaRepository.findById(id).orElse(null);
     }
 
     @Override
     public void eliminarCategoria(Categoria categoria) {
-
+    categoriaRepository.delete(categoria); 
     }
-
-
 }
+
